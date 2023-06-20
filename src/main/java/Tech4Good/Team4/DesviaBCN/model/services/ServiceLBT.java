@@ -1,11 +1,8 @@
 package Tech4Good.Team4.DesviaBCN.model.services;
 
 import Tech4Good.Team4.DesviaBCN.model.domain.LocalByType;
-import Tech4Good.Team4.DesviaBCN.model.domain.PointOfInterest;
 import Tech4Good.Team4.DesviaBCN.model.dtos.LocalByTypeDTO;
-import Tech4Good.Team4.DesviaBCN.model.dtos.PointOfInterestDTO;
 import Tech4Good.Team4.DesviaBCN.model.repository.IRepositoryLBT;
-import Tech4Good.Team4.DesviaBCN.model.repository.IRepositoryPOI;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -27,20 +24,20 @@ public class ServiceLBT implements IServiceLBT{
 
     @Override
     public LocalByTypeDTO findById(int pointOIid) {
-        PointOfInterest pointOfInterest = repository.findById(pointOIid);
-        return convertToDTO(pointOfInterest);
+        LocalByType localByType = repository.findById(pointOIid);
+        return convertToDTO(localByType);
     }
 
     @Override
     public List<LocalByTypeDTO> findByDistrict(String district) {
-        List<PointOfInterest> pointsOfInterest = repository.findByDistrict(district);
-        return pointsOfInterest.stream().map(p -> convertToDTO(p)).collect(Collectors.toList());
+        List<LocalByType> localsByType = repository.findByDistrict(district);
+        return localsByType.stream().map(l -> convertToDTO(l)).collect(Collectors.toList());
     }
 
     @Override
     public List<LocalByTypeDTO> findByNeighbourhood(String neighbourhood) {
-        List<PointOfInterest> pointsOfInterest = repository.findByNeighbourhood(neighbourhood);
-        return pointsOfInterest.stream().map(p -> convertToDTO(p)).collect(Collectors.toList());
+        List<LocalByType> localsByType = repository.findByNeighbourhood(neighbourhood);
+        return localsByType.stream().map(l -> convertToDTO(l)).collect(Collectors.toList());
     }
 
     @Override

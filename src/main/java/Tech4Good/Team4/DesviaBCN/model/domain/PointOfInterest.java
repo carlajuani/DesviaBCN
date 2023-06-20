@@ -25,13 +25,8 @@ public class PointOfInterest {
     private String district;
     @Column(name = "zipcode")
     private String zipcode;
-    @Column(name = "email")
-    private String email;
-    @Column(name = "web")
-    private String web;
     @Column(name = "longLongitude")
     private int longLongitude;
     @Column(name = "longLatitude")
     private int longLatitude;
-
 }

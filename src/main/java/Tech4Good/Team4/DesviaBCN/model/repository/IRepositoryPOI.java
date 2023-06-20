@@ -7,12 +7,12 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface IRepository extends JpaRepository<Integer, PointOfInterest> {
+public interface IRepositoryPOI extends JpaRepository<Integer, PointOfInterest> {
 
     PointOfInterest findById(int id);
     List<PointOfInterest> findByZipcode(String zipcode);
     List<PointOfInterest> findByDistrict(String district);
-    List<PointOfInterest> findByUseType(String useType);
-    List<PointOfInterest> findByDistanceFromFocus(int distanceFromFocus);
+    List<PointOfInterest> findByNeighbourhood(String neighbourhood);
+
 
 }

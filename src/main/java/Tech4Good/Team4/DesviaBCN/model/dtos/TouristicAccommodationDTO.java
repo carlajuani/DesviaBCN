@@ -5,17 +5,19 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
+
 @Data
 @NoArgsConstructor
 @Entity
-public class PointOfInterestDTO {
-    private int id;
-    private String name;
+public class TouristicAccommodationDTO {
+    private int accommodationId;
     private String street;
     private String streetNum;
     private String neighbourhood;
     private String district;
-    private String zipcode;
+    private String floor;
+    private String door;
+    private int numSpots;
     private int longLongitude;
     private int longLatitude;
 }

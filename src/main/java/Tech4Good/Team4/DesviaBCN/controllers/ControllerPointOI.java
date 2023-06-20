@@ -1,7 +1,7 @@
 package Tech4Good.Team4.DesviaBCN.controllers;
 
 import Tech4Good.Team4.DesviaBCN.model.dtos.PointOfInterestDTO;
-import Tech4Good.Team4.DesviaBCN.model.services.IServicePointOI;
+import Tech4Good.Team4.DesviaBCN.model.services.IServicePOI;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,7 @@ import java.util.List;
 public class ControllerPointOI {
 
     @Autowired
-    IServicePointOI service;
+    IServicePOI service;
 
     @GetMapping("/getPOI/{id}")
     @Operation(

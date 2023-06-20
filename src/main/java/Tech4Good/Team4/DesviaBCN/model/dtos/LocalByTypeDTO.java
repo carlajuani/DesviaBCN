@@ -8,14 +8,10 @@ import org.springframework.data.annotation.Id;
 @Data
 @NoArgsConstructor
 @Entity
-public class PointOfInterestDTO {
-    private int id;
-    private String name;
-    private String street;
-    private String streetNum;
+public class LocalByTypeDTO {
+    private int localId;
     private String neighbourhood;
     private String district;
-    private String zipcode;
-    private int longLongitude;
-    private int longLatitude;
+    private String useType;
+    private int cadastreName;
 }

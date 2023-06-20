@@ -5,6 +5,7 @@ import Tech4Good.Team4.DesviaBCN.model.dtos.PointOfInterestDTO;
 
 import java.util.List;
 
+
 public interface IServicePOI {
 
     PointOfInterestDTO findById(int pointOIid);

@@ -1,12 +1,13 @@
 package Tech4Good.Team4.DesviaBCN.model.domain;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "LocalByType")
 public class LocalByType {

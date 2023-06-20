@@ -9,9 +9,9 @@ import java.util.List;
 
 public interface IServiceLBT {
     LocalByTypeDTO findById(int pointOIid);
-    List<LocalByTypeDTO> findByZipcode(String zipcode);
     List<LocalByTypeDTO> findByDistrict(String district);
     List<LocalByTypeDTO> findByNeighbourhood(String neighbourhood);
+    List<LocalByTypeDTO> findByUseType(String useType);
     LocalByTypeDTO convertToDTO(LocalByType localByType);
 
 }

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface IRepositoryTA extends JpaRepository<Integer, TouristicAccommodation> {
+public interface IRepositoryTA extends JpaRepository<TouristicAccommodation, Integer> {
     TouristicAccommodation findById(int id);
     List<TouristicAccommodation> findByDistrict(String district);
     List<TouristicAccommodation> findByNeighbourhood(String neighbourhood);

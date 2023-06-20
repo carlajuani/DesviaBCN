@@ -13,5 +13,4 @@ public interface IServicePOI {
     List<PointOfInterestDTO> findByDistrict(String district);
     List<PointOfInterestDTO> findByNeighbourhood(String neighbourhood);
     PointOfInterestDTO convertToDTO(PointOfInterest pointOfInterest);
-
 }

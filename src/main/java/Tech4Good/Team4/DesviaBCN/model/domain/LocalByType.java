@@ -2,7 +2,6 @@ package Tech4Good.Team4.DesviaBCN.model.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.Id;
 
 @Data
 @NoArgsConstructor
@@ -13,7 +12,7 @@ import org.springframework.data.annotation.Id;
 public class LocalByType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int localId;
+    private int localID;
     @Column(name = "neighbourhood")
     private String neighbourhood;
     @Column(name = "district")

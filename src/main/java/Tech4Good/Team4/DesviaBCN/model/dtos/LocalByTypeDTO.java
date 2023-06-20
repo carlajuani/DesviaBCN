@@ -8,9 +8,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
 public class LocalByTypeDTO {
-    private int localId;
+    private int localID;
     private String neighbourhood;
     private String district;
     private String useType;

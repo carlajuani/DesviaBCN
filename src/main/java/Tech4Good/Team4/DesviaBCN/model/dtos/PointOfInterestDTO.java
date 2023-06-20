@@ -9,7 +9,6 @@ import org.springframework.data.annotation.Id;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
 public class PointOfInterestDTO {
     private int id;
     private String name;
@@ -18,6 +17,7 @@ public class PointOfInterestDTO {
     private String neighbourhood;
     private String district;
     private String zipcode;
-    private int longLongitude;
-    private int longLatitude;
+    private float longLongitude;
+    private float longLatitude;
+    private int density;
 }

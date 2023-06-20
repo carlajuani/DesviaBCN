@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 @Data
 @NoArgsConstructor
@@ -16,7 +15,7 @@ import org.springframework.data.annotation.Id;
 public class PointOfInterest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int pointOIid;
+    private int id;
     @Column(name = "name")
     private String name;
     @Column(name = "street")
@@ -30,7 +29,9 @@ public class PointOfInterest {
     @Column(name = "zipcode")
     private String zipcode;
     @Column(name = "longLongitude")
-    private int longLongitude;
+    private float longLongitude;
     @Column(name = "longLatitude")
-    private int longLatitude;
+    private float longLatitude;
+    @Column(name = "density")
+    private int density;
 }

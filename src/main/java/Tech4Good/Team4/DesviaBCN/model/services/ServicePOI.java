@@ -5,7 +5,6 @@ import Tech4Good.Team4.DesviaBCN.model.dtos.PointOfInterestDTO;
 import Tech4Good.Team4.DesviaBCN.model.repository.IRepositoryPOI;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,19 +28,25 @@ public class ServicePOI implements IServicePOI {
     @Override
     public List<PointOfInterestDTO> findByZipcode(String zipcode) {
         List<PointOfInterest> pointsOfInterest = repository.findByZipcode(zipcode);
-        return pointsOfInterest.stream().map(p -> convertToDTO(p)).collect(Collectors.toList());
+        return pointsOfInterest.stream()
+                .filter(p -> p.getDensity() < 4)
+                .map(p -> convertToDTO(p)).collect(Collectors.toList());
     }
 
     @Override
     public List<PointOfInterestDTO> findByDistrict(String district) {
         List<PointOfInterest> pointsOfInterest = repository.findByDistrict(district);
-        return pointsOfInterest.stream().map(p -> convertToDTO(p)).collect(Collectors.toList());
+        return pointsOfInterest.stream()
+                .filter(p -> p.getDensity() < 4)
+                .map(p -> convertToDTO(p)).collect(Collectors.toList());
     }
 
     @Override
     public List<PointOfInterestDTO> findByNeighbourhood(String neighbourhood) {
         List<PointOfInterest> pointsOfInterest = repository.findByNeighbourhood(neighbourhood);
-        return pointsOfInterest.stream().map(p -> convertToDTO(p)).collect(Collectors.toList());
+        return pointsOfInterest.stream()
+                .filter(p -> p.getDensity() < 4)
+                .map(p -> convertToDTO(p)).collect(Collectors.toList());
     }
 
     @Override

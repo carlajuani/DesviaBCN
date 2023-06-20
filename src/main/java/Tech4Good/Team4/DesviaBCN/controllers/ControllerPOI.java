@@ -49,7 +49,7 @@ public class ControllerPOI {
 
     @GetMapping("/getPOISbyDistrict")
     @Operation(
-            summary = "get all points of interest of a district",
+            summary = "get all points of interest from a district",
             requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "String district")
     )
     public ResponseEntity<List<PointOfInterestDTO>> getPointsOIByDistrict(@RequestParam String district) {
@@ -64,31 +64,14 @@ public class ControllerPOI {
         }
     }
 
-    @GetMapping("/getPOISbyUseType")
+    @GetMapping("/getPOISbyNeighbourhood")
     @Operation(
-            summary = "get all points of interest with same use type",
-            requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "String useType")
+            summary = "get all points of interest from a neighbourhood",
+            requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "String neighbourhood")
     )
-    public ResponseEntity<List<PointOfInterestDTO>> getPointsOIByUseType(@RequestParam String useType) {
+    public ResponseEntity<List<PointOfInterestDTO>> getPointsOIByNeighbourhood(@RequestParam String neighbourhood) {
         try {
-            List<PointOfInterestDTO> pointsOfInterestDTO = service.findByDistrict(useType);
-            if (pointsOfInterestDTO.isEmpty()) {
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-            }
-            return new ResponseEntity<>(pointsOfInterestDTO, HttpStatus.OK);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-        }
-    }
-
-    @GetMapping("/getPOISbyDistanceFromFocus")
-    @Operation(
-            summary = "get all points of interest with same distance from turistic focus",
-            requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "String distanceFromFocus")
-    )
-    public ResponseEntity<List<PointOfInterestDTO>> getPointsOIByDistanceFromFocus(@RequestParam String distanceFromFocus) {
-        try {
-            List<PointOfInterestDTO> pointsOfInterestDTO = service.findByDistrict(distanceFromFocus);
+            List<PointOfInterestDTO> pointsOfInterestDTO = service.findByNeighbourhood(neighbourhood);
             if (pointsOfInterestDTO.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }

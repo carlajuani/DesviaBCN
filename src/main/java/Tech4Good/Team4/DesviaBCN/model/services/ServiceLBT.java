@@ -17,10 +17,8 @@ public class ServiceLBT implements IServiceLBT{
     @Autowired
     private IRepositoryLBT repository;
 
-    @Bean
-    public ModelMapper getModelMapper() {
-        return new ModelMapper();
-    }
+    @Autowired
+    ModelMapper modelMapper;
 
     @Override
     public LocalByTypeDTO findById(int pointOIid) {
@@ -48,6 +46,6 @@ public class ServiceLBT implements IServiceLBT{
 
     @Override
     public LocalByTypeDTO convertToDTO(LocalByType localByType) {
-        return getModelMapper().map(localByType, LocalByTypeDTO.class);
+        return modelMapper.map(localByType, LocalByTypeDTO.class);
     }
 }

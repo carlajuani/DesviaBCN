@@ -20,10 +20,8 @@ public class ServiceTA implements IServiceTA {
     @Autowired
     private IRepositoryTA repository;
 
-    @Bean
-    public ModelMapper getModelMapper() {
-        return new ModelMapper();
-    }
+    @Autowired
+    ModelMapper modelMapper;
 
     @Override
     public TouristicAccommodationDTO findById(int id) {
@@ -45,6 +43,6 @@ public class ServiceTA implements IServiceTA {
 
     @Override
     public TouristicAccommodationDTO convertToDTO(TouristicAccommodation touristicAccommodation) {
-        return getModelMapper().map(touristicAccommodation, TouristicAccommodationDTO.class);
+        return modelMapper.map(touristicAccommodation, TouristicAccommodationDTO.class);
     }
 }

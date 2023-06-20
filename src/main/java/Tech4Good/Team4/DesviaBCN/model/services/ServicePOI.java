@@ -17,10 +17,8 @@ public class ServicePOI implements IServicePOI {
     @Autowired
     private IRepositoryPOI repository;
 
-    @Bean
-    public ModelMapper getModelMapper() {
-       return new ModelMapper();
-    }
+    @Autowired
+    ModelMapper modelMapper;
 
     @Override
     public PointOfInterestDTO findById(int pointOIid) {
@@ -48,6 +46,6 @@ public class ServicePOI implements IServicePOI {
 
     @Override
     public PointOfInterestDTO convertToDTO(PointOfInterest pointOfInterest) {
-        return getModelMapper().map(pointOfInterest, PointOfInterestDTO.class);
+        return modelMapper.map(pointOfInterest, PointOfInterestDTO.class);
     }
 }

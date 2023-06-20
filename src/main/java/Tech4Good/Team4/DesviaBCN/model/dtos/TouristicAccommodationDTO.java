@@ -11,7 +11,6 @@ import org.springframework.data.annotation.Id;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Entity
 public class TouristicAccommodationDTO {
     private int accommodationId;

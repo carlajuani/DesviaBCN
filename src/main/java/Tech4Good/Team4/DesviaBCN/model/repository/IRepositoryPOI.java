@@ -8,11 +8,8 @@ import java.util.List;
 
 @Repository
 public interface IRepositoryPOI extends JpaRepository<Integer, PointOfInterest> {
-
     PointOfInterest findById(int id);
     List<PointOfInterest> findByZipcode(String zipcode);
     List<PointOfInterest> findByDistrict(String district);
     List<PointOfInterest> findByNeighbourhood(String neighbourhood);
-
-
 }

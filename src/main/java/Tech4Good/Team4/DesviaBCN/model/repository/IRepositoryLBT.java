@@ -9,7 +9,6 @@ import java.util.List;
 
 @Repository
 public interface IRepositoryLBT extends JpaRepository<Integer, LocalByType> {
-
     LocalByType findById(int id);
     List<LocalByType> findByDistrict(String district);
     List<LocalByType> findByNeighbourhood(String neighbourhood);

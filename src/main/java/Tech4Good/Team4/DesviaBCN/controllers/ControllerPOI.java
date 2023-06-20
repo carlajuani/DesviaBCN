@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/desviaBCN")
-public class ControllerPointOI {
+public class ControllerPOI {
 
     @Autowired
     IServicePOI service;
